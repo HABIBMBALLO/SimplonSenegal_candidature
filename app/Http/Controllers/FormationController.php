@@ -14,9 +14,19 @@ class FormationController extends Controller
      */
     public function index()
     {
-        //
+        $formations = Formation::all();
+        return view('formations.index', compact('formations'));
     }
 
+    /**
+     * create the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function create(){
+        return view('formations.create');
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -25,7 +35,8 @@ class FormationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Formation::create($request->all());
+        return redirect()->route('formations.create');
     }
 
     /**
@@ -34,9 +45,10 @@ class FormationController extends Controller
      * @param  \App\Models\Formation  $formation
      * @return \Illuminate\Http\Response
      */
-    public function show(Formation $formation)
+    public function show($id)
     {
-        //
+        $formation = Formation::find($id);
+        return view('formations.show', compact('formation'));
     }
 
     /**
@@ -46,9 +58,10 @@ class FormationController extends Controller
      * @param  \App\Models\Formation  $formation
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Formation $formation)
+    public function update(Request $request, $id)
     {
-        //
+        Formation::find($id)->update($request->all());
+        return redirect()->route('formations.show', $id);
     }
 
     /**
@@ -57,8 +70,10 @@ class FormationController extends Controller
      * @param  \App\Models\Formation  $formation
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Formation $formation)
+    public function destroy($id)
     {
-        //
+        Formation::find($id);
+        $formation->delete();
+        return redirect()->route('formations.index');
     }
 }
