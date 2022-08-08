@@ -12,6 +12,6 @@ class Formation extends Model
     protected $fillable = ['titreFormation','description','cible','duree'];
 
     public function appelCandidatures () {
-        return $this->hasMany(AppelCandidature::class,'foreign_key');
+        return $this->hasMany(AppelCandidature::class);
     }
 }
