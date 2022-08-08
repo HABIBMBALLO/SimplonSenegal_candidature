@@ -25,12 +25,12 @@ Auth::routes();
 
 
 
-Route::prefix('admin')->namespace('Back')->group(function () {
+// Route::prefix('admin')->namespace('Back')->group(function () {
 
-    Route::name('admin')->get('/', 'AdminController@index');
+//     Route::name('admin')->get('/', 'AdminController@index');
 
-});
+// });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

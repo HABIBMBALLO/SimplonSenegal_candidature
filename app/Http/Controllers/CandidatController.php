@@ -14,9 +14,21 @@ class CandidatController extends Controller
      */
     public function index()
     {
-        //
+        $candidats = Candidat::all();
+        return view('candidats.index', compact('candidats'));
     }
 
+    /**
+     * create the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+    public function create()
+    {
+        return view('candidats.create');
+    }
+     
     /**
      * Store a newly created resource in storage.
      *
@@ -25,7 +37,8 @@ class CandidatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Candidat:create($request->all());
+        return redirect()->route('candidats.create');
     }
 
     /**
@@ -34,9 +47,10 @@ class CandidatController extends Controller
      * @param  \App\Models\Candidat  $candidat
      * @return \Illuminate\Http\Response
      */
-    public function show(Candidat $candidat)
+    public function show($id)
     {
-        //
+        $candidat = Candidat::find($id);
+        return view('candidats.show', compact('candidat'));
     }
 
     /**
@@ -46,9 +60,11 @@ class CandidatController extends Controller
      * @param  \App\Models\Candidat  $candidat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Candidat $candidat)
+    public function update(Request $request, $id)
     {
-        //
+        $candidat = Candidat::find($id);
+        $candidat->update($request->all());
+        return redirect()->route('candidats.show', $candidat->id);
     }
 
     /**
@@ -57,8 +73,10 @@ class CandidatController extends Controller
      * @param  \App\Models\Candidat  $candidat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Candidat $candidat)
+    public function destroy($id)
     {
-        //
+        $candidat = Candidat::find($id);
+        $candidat->delete();
+        return redirect()->route('candidats.index');
     }
 }
