@@ -15,7 +15,8 @@ class CandidatController extends Controller
     public function index()
     {
         $candidats = Candidat::all();
-        return view('candidats.index', compact('candidats'));
+         return view('candidat.index', compact('candidats'));
+        
     }
 
     /**
@@ -26,7 +27,8 @@ class CandidatController extends Controller
 
     public function create()
     {
-        return view('candidats.create');
+        return view('candidat.create');
+        
     }
      
     /**
@@ -37,7 +39,7 @@ class CandidatController extends Controller
      */
     public function store(Request $request)
     {
-        Candidat:create($request->all());
+        $candidat= candidat::create($request->all());
         return redirect()->route('candidats.create');
     }
 
@@ -50,7 +52,7 @@ class CandidatController extends Controller
     public function show($id)
     {
         $candidat = Candidat::find($id);
-        return view('candidats.show', compact('candidat'));
+        return view('candidat.show', compact('candidat'));
     }
 
     /**

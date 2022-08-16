@@ -1,7 +1,7 @@
 <!-- Control Sidebar -->
-<aside class="control-sidebar control-sidebar-dark">
+<aside class="control-sidebar control-sidebar-danger">
     <!-- Control sidebar content goes here -->
-    <div class="p-3">
+    <div class="py-5">
       <h5>Title</h5>
       <p>Sidebar content</p>
     </div>
@@ -9,23 +9,19 @@
   <!-- /.control-sidebar -->
 
   <!-- Main Footer -->
-  <footer class="main-footer">
+  <footer class="main-footer"><br><br>
     <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2021-2022 <a href="https://senegal.simplon.co/">Simplon.co Senegal</a>.</strong> All rights reserved.
   </footer>
-</div>
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
-<script src="{{ ('plugins/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset ('plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
-<script src="{{ ('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset ('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ ('dist/js/adminlte.min.js') }}"></script>
-<!-- @yield('scripts') -->
+<script src="{{asset  ('dist/js/adminlte.min.js') }}"></script>
+@yield('scripts')
