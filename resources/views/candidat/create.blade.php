@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.master')
 
 @section('content')
 
-                <form class="row g-5" >
+              
 <div class="container-fluid d-flex justify-content-center">
         <div class="row">
           <!-- left column -->
@@ -14,7 +14,8 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form action="store" method="POST">
+              <form action="/candidats/store" method="POST">
+                @csrf
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nom</label>
@@ -22,7 +23,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Prenom</label>
-                    <input type="text" class="form-control" id="exampleInputPrenom1" placeholder="prenom" name="nom">
+                    <input type="text" class="form-control" id="exampleInputPrenom1" placeholder="prenom" name="prenom">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">CNI</label>

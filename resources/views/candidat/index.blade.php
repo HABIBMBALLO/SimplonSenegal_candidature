@@ -18,22 +18,22 @@
                                           <tr>
                                              <th>Nom</th>
                                              <th>Prenom</th>
-                                             <th>Telephone</th>
-                                             <th>Genre</th>
+                                             <th>CNI</th>
+                                             <th></th>
                                              <th>Action</th>
                                           </tr>
                                        </thead>
                                        <tbody>
-                                       @foreach($candidats as $candidat)
+                                       @foreach($candidats as $cand)
                                           <tr>
-                                             <td>{{$candidat->nom}}</td>
-                                             <td>{{$candidat->prenom}}</td>
-                                             <td>{{$candidat->telephone}}</td>
-                                             <td>{{$candidat->sexe}}</td>
+                                             <td>{{$cand->nom}}</td>
+                                             <td>{{$cand->prenom}}</td>
+                                             <td>{{$cand->telephone}}</td>
+                                             <td>{{$cand->sexe}}</td>
                                               <td>
-                                                  <a href="{{route('candidats.show',['id'=>$prop->id])}}"><i class="bi bi-plus-circle" style="color: #03ECC7;"></i></a>
-                                                  <a href="{{route('candidats.edit',['id'=>$prop->id])}}"><i class="bi bi-pencil-square" style="color:#FFEF00;"></i></a>
-                                                  <a href="{{route('candidats.destroy',['id'=>$prop->id])}}"> <i class="bi bi-x-circle" style="color:#E40000;"></i></a>
+                                                  <a href="{{route('candidats.show',['id'=>$cand->id])}}"><i class="bi bi-plus-circle" style="color: #03ECC7;"></i></a>
+                                                  <a href="{{route('candidats.edit',['id'=>$cand->id])}}"><i class="bi bi-pencil-square" style="color:#FFEF00;"></i></a>
+                                                  <a href="{{route('candidats.destroy',['id'=>$cand->id])}}"> <i class="bi bi-x-circle" style="color:#E40000;"></i></a>
                                               </td>
                                           </tr>
                                           @endforeach

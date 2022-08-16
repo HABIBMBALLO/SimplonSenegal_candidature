@@ -39,6 +39,7 @@ class CandidatController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $candidat= candidat::create($request->all());
         return redirect()->route('candidats.create');
     }

@@ -9,7 +9,7 @@ class Candidat extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nom','prenom','cni','dateNaissance','lieuNaissance','niveauEtude'];
+    protected $fillable = ['nom','prenom','cni','dateNaissance','lieuNaissance','niveauEtude', 'user_id'];
 
     public function appelCandidatures() {
         return $this->hasMany(AppelCandidature::class);
