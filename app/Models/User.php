@@ -42,4 +42,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // relation entre user et candidat
+    public function candidat() {
+        return $this->hasOne(Candidat::class);
+    }   
 }

@@ -23,7 +23,7 @@ return new class extends Migration
             // $table->unsignedBigInteger('appelcandidature_id');
             // $table->foreign('appelcandidature_id')->references('id')->on('appel_candidatures');
 
-            $table->foreignId('appel_candidature_id')->constrained();
+            // $table->foreignId('appel_candidature_id')->constrained();
             $table->timestamps();
         });
     }

@@ -9,9 +9,9 @@ class Formation extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titreFormation','description','cible','duree'];
+    protected $fillable = ['titreformation','description','cible','duree','typeformation'];
 
     public function appelCandidatures () {
-        return $this->hasMany(AppelCandidature::class);
+        return $this->belongTo(appelCandidatures::class);
     }
 }

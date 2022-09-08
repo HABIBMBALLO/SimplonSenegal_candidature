@@ -9,14 +9,17 @@ class AppelCandidature extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['titre','description','dateDebut','dateFin'];
+    protected $fillable = ['titre','description','dateDebut','dateFin','appelCandidatures'];
 
     public function candidats () {
         return $this->hasMany(Candidat::class);
     }
 
     public function formation () {
-        return $this->belongTo(Formation::class);
+        return $this->hasMany(Formation::class);
     }
     
 }
+
+
+

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simplon</title>
@@ -11,98 +11,86 @@
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('plugins/dist/css/bootstrap.min.css')}}" rel="stylesheet">
   <!-- CSS only -->
- <link href="{{ asset ('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css')}}" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link href="{{ asset ('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css') }}" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+ <link rel="stylesheet" href="{{ asset ('https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css') }}" integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Custom styles for this template -->
   <link href="carousel.css" rel="stylesheet">
+  <link href="/resources/css/app.css" rel="stylesheet">
 
 </head>
 <body>
 <header>
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-danger">
-        <a class="navbar-brand" href="https://senegal.simplon.co/">Simplon Senegal</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-          </ul>
-          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button class="btn btn-light me-md-2" type="button">Button</button>
-            <button class="btn btn-light" type="button">Button</button>
-          </div>
-          <!-- <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a href="https://senegal.simplon.co/" class="navbar-brand">
+                <img src="dist/img/simplon.png" height="28" alt="logo">
+            </a>
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="https://senegal.simplon.co/" class="nav-link">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://senegal.simplon.co/about" class="nav-link">A propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://senegal.simplon.co/about" class="nav-link">Formation</a>
+                    </li>
+                    </li>    
+
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="" class="nav-item nav-link btn-danger">Login</a>
+                    <a href="{{url ('/Logout')}}" class="nav-item nav-link">Logout</a>
+                </div>
+            </div>
         </div>
-      </nav>
+    </nav>
+
     </header>
 
     <main role="main">
-      <div id="myCarousel" class="carousel slide" data-ride="carousel"><br><br><br><br>
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="first-slide" src="/dist/img/christopher-gower-m_HRfLhgABo-unsplash.jpg" alt="First slide">
-            <div class="container">
-              <div class="carousel-caption text-left">
-                <h1>Simplon Senegal</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-danger" href="/candidats/store" role="button">Sign up today</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item ">
-            <img class="second-slide" src="/dist/img/alexandru-acea-XEB8y0nRRP4-unsplash.jpg d-block w-100" alt="Second slide">
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="third-slide"  src="/dist/img/IMG-20211104-WA0026.jpg d-block w-100" alt="Third slide">
-            <div class="container">
-              <div class="carousel-caption text-right">
-                <h1>One more for good measure.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-              </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img class="third-slide" src="/dist/img/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg   d-block w-100" alt="Third slide" >
-            <div class="container">
-              <div class="carousel-caption text-right">
-                <h1>One more for good measure.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="dist/img/IMG-20211104-WA0026.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Developpement web et web mobile</h5>
+        <p>Le développeur web mobile est un concepteur spécialisé en application mobile.</p>
       </div>
+    </div>
+    <div class="carousel-item">
+      <img src="dist/img/christopher-gower-m_HRfLhgABo-unsplash.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Referent Digital</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="dist/img/alexandru-acea-XEB8y0nRRP4-unsplash.jpg" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>ADEFIPA</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev btn-danger" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next btn-danger" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
       <!-- Marketing messaging and featurettes
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
@@ -115,7 +103,7 @@
             <img class="rounded-circle" src="/dist/img/undraw_web_developer_re_h7ie.svg" alt="Generic placeholder image" width="140" height="140">
             <h2>Web Developper</h2>
             <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <p><a class="btn btn-secondary" href="{{route('candidats.create')}}" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="/dist/img/undraw_react_re_g3ui.svg" alt="Generic placeholder image" width="140" height="140">
@@ -179,26 +167,95 @@
 
       </div><!-- /.container -->
 
-      <!-- FOOTER -->
-      <footer class="main-footer"><br><br>
-    <!-- To the right -->
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2021-2022 <a href="https://senegal.simplon.co/">Simplon.co Senegal</a>.</strong> All rights reserved.
-  </footer>
+        <!-- ======= Footer ======= -->
+  <footer id="footer" class="bg-dark">
+
+<div class="footer-top ">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-3 col-md-6 footer-contact text-white">
+        <h3>Presento<span>.</span></h3>
+        <p>
+          A108 Adam Street <br>
+          New York, NY 535022<br>
+          United States <br><br>
+          <strong>Phone:</strong> +1 5589 55488 55<br>
+          <strong>Email:</strong> info@example.com<br>
+        </p>
+      </div>
+
+      <div class="col-lg-2 col-md-6 footer-links text-white">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Home</a></li>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">About us</a></li>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Services</a></li>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Terms of service</a></li>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Privacy policy</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-links text-white">
+        <h4>Our Services</h4>
+        <ul>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Web Design</a></li>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Web Development</a></li>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Product Management</a></li>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Marketing</a></li>
+          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Graphic Design</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 col-md-6 footer-newsletter text-white ">
+        <h4>Join Our Newsletter</h4>
+        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+        <form action="" method="post">
+          <input type="email" name="email"><input type="submit" value="Subscribe">
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container d-md-flex py-4 text-white">
+
+  <div class="me-md-auto text-center text-md-start">
+    <div class="copyright">
+      &copy; Copyright <strong><span>Presento</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/ -->
+      Designed by <a href="https://senegal.simplon.co/">Simplon Senegal</a>
+    </div>
+  </div>
+  <div class="social-links text-center text-md-end pt-3 pt-md-0">
+    <a href="#" class="twitter"><i class=" bx bxl-twitter-danger"></i></a>
+    <a href="#" class="facebook"><i class=" bx bxl-facebook-danger"></i></a>
+    <a href="#" class="instagram"><i class=" bx bxl-instagram danger"></i></a>
+    <a href="#" class="google-plus"><i class=" bx bxl-skype danger"></i></a>
+    <a href="#" class="linkedin"><i class=" bx bxl-linkedin danger"></i></a>
+  </div>
+</div>
+</footer><!-- End Footer -->
     </main>
 
    <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="{{ asset ('https://code.jquery.com/jquery-3.2.1.slim.min.js')}}" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="{{asset ('../../assets/js/vendor/popper.min.js') }}"></script>
     <!-- <script src="../../dist/js/bootstrap.min.js"></script> -->
     <script src="{{ asset('plugins/bootstrap/js/bootstrap.min.js')}}"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="../../assets/js/vendor/holder.min.js"></script>
-    <script src="{{ ('plugins/datatables/jquery.dataTables.min.js')}}"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
+    <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{ asset('https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js')}}" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="{{ asset ('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js')}}" integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK" crossorigin="anonymous"></script>
 </body>
 </html>

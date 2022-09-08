@@ -19,7 +19,7 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Nom</label>
-                    <input type="text" class="form-control" id="nom" placeholder="Enter nom" name="nom">
+                    <input type="text" class="form-control" id="nom" placeholder="Enter nom" name="nom" value="{{Auth::user()->name}}">
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Prenom</label>
@@ -41,12 +41,16 @@
                     <label for="exampleInputPassword1">niveauEtude</label>
                     <input type="text" class="form-control" id="niveauEtude" placeholder="niveauEtude" name="niveauEtude">
                   </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">user_id</label>
-                    <input type="number" class="form-control" id="user_id" placeholder="user_id" name="user_id">
-                  </div>
                 </div>
-                <!-- /.card-body -->
+                 <div class="col-md-4">
+                    <label for="typeformation" class="form-label"></label>
+                    <select id="inputState" class="form-select" name="formation_id">
+                        @foreach($formations as $formation)
+                            <option  value="{{$formation->id}}">{{$formation->typeformation}}</option> 
+        
+                        @endforeach
+                    </select>
+                  </div>
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-danger">Envoyer</button>

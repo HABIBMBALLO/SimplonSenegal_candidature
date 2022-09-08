@@ -15,7 +15,7 @@ class FormationController extends Controller
     public function index()
     {
         $formations = Formation::all();
-        return view('formations.index', compact('formations'));
+        return view('formation.index', compact('formations'));
     }
 
     /**
@@ -25,7 +25,7 @@ class FormationController extends Controller
      */
 
     public function create(){
-        return view('formations.create');
+        return view('formation.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -35,8 +35,9 @@ class FormationController extends Controller
      */
     public function store(Request $request)
     {
-        Formation::create($request->all());
-        return redirect()->route('formations.create');
+        $formation = Formation::create($request->all());
+        return redirect()->route('formations.create')->withStatus('Formation successfully registered.');
+        
     }
 
     /**
@@ -48,7 +49,7 @@ class FormationController extends Controller
     public function show($id)
     {
         $formation = Formation::find($id);
-        return view('formations.show', compact('formation'));
+        return view('formation.show', compact('formation'));
     }
 
     /**

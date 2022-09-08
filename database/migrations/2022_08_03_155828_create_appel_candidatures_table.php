@@ -20,6 +20,7 @@ return new class extends Migration
             $table->date('dateDebut');
             $table->date('dateFin');
             $table->timestamps();
+            $table->foreignId('formation_id')->constrained();
         });
     }
 

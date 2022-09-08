@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Candidat;
+use App\Models\Formation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CandidatController extends Controller
 {
@@ -13,9 +15,11 @@ class CandidatController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $candidats = Candidat::all();
-         return view('candidat.index', compact('candidats'));
+        return view('candidat.index', compact('candidats'));
+        // $candidats = Candidat::paginate(5);
+        //  return view('candidat.index', compact('candidats'));
         
     }
 
@@ -26,8 +30,11 @@ class CandidatController extends Controller
      */
 
     public function create()
-    {
-        return view('candidat.create');
+    {   
+        $formations = Formation::all();
+        return view('candidat.create', [
+            'formations' => $formations
+        ]);
         
     }
      
@@ -39,9 +46,43 @@ class CandidatController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $candidat= candidat::create($request->all());
-        return redirect()->route('candidats.create');
+        // $id = Auth::id();
+        // dd($id);
+
+        // creer une fonction pour recuperer le type de formation et le nom de la formation pour l'enregistrer dans la table appelCandidature 
+        
+        //fonction pour editer le nom de la formation
+        // $formation = str_replace(' ', '_', $formation);
+        // $formation = strtolower($formation);
+        // $formation = ucfirst($formation);
+        // $formation = $formation . '_' . $request->input('niveau');
+        // dd($formation);
+        // $request->merge(['formation' => $formation]);
+        // $candidat = Candidat::create($request->all());
+        // return redirect()->route('candidats.create')->withStatus('Candidat successfully registered.');
+        //methode validate
+
+         $validate = $request->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'cni' => 'required',
+            'dateNaissance' => 'required',
+            'lieuNaissance' => 'required',
+            'niveauEtude' => 'required',
+        ]);
+
+        $candidat= candidat::create([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'cni' => $request->cni,
+            'dateNaissance' => $request->dateNaissance,
+            'lieuNaissance' => $request->lieuNaissance,
+            'niveauEtude' => $request->niveauEtude,
+            'user_id' => Auth::id(),
+        ]);
+
+
+        return redirect()->route('candidats.create')->withStatus('Candidat successfully registered.');
     }
 
     /**
@@ -53,7 +94,10 @@ class CandidatController extends Controller
     public function show($id)
     {
         $candidat = Candidat::find($id);
-        return view('candidat.show', compact('candidat'));
+        return view('candidat.show',
+         [
+        'candidats'=>$candidat
+    ]);
     }
 
     /**

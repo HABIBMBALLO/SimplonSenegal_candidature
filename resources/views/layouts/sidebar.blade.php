@@ -14,14 +14,14 @@
           <img src="{{ asset ('/dist/img/profile.png')}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block color-white text-white">Habib Mballo</a>
+          <a href="#" class="d-block color-white text-white">{{Auth::user()->name}}</a>
         </div>
       </div>
 
           <!-- Sidebar Menu -->
           <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column " data-widget="treeview" role="menu" data-accordion="false">
-
+      
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy text-white"></i>
@@ -32,36 +32,11 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon text-white"></i>
-                  <p class="text-white">Ajouter un candidat</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('candidats.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon text-white"></i>
                   <p class="text-white">Liste des candidats</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon text-white"></i>
-                  <p class="text-white">candidats Accepter</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon text-white"></i>
-                  <p class="text-white">candidats rejetter</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon text-white"></i>
-                  <p class="text-white">candidats en attente</p>
-                </a>
-              </li>
-              
+              </li>       
             </ul>
           </li>
           <li class="nav-item">
@@ -97,13 +72,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('formations.create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon text-white"></i>
                   <p class="text-white">Ajouter une Formations</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{route('formations.index')}}" class="nav-link">
                   <i class="far fa-circle nav-icon text-white"></i>
                   <p class="text-white">Liste des Formations</p>
                 </a>
