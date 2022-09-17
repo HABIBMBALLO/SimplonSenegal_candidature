@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('description');
             $table->date('dateDebut');
             $table->date('dateFin');
+            $table->foreignId('formation_id')->nullable();
             $table->timestamps();
-            $table->foreignId('formation_id')->constrained();
         });
     }
 

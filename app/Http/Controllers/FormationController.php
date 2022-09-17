@@ -26,6 +26,7 @@ class FormationController extends Controller
 
     public function create(){
         return view('formation.create');
+        with('success', 'Formation ajoutée avec succès');
     }
     /**
      * Store a newly created resource in storage.

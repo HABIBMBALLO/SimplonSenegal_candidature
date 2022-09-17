@@ -4,6 +4,7 @@
 
               
 <div class="container-fluid d-flex justify-content-center">
+ 
         <div class="row">
           <!-- left column -->
           <div class="col-md-10"><br><br>
@@ -23,7 +24,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Description</label>
-                    <input type="text" class="form-control" id="exampleInputDescription" placeholder="Description" name="description">
+                    <textarea  class="form-control" id="description" placeholder="description" name="description"></textarea>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Cible</label>
@@ -37,11 +38,6 @@
                     <label for="exampleInputEmail1">type formation</label>
                     <input type="text" class="form-control" id="type formation" placeholder="Enter type formation" name="typeformation">
                   </div>
-                  <!-- <div class="form-group">
-                    <label for="exampleInputEmail1">appel_candidature_id</label>
-                    <input type="number" class="form-control" id="type formation" placeholder="Enter type formation" name="appel_candidature_id">
-                  </div> -->
-    
                 </div>
                 <!-- /.card-body -->
 
@@ -50,7 +46,5 @@
                 </div>
               </form>
             </div>
-
-    
-
 @endsection
+

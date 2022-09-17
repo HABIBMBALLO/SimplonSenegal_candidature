@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AppelCandidature;
 use Illuminate\Http\Request;
+use App\Models\Formation;
 
 class AppelCandidatureController extends Controller
 {
@@ -25,8 +26,11 @@ class AppelCandidatureController extends Controller
      */
 
     public function create()
-    {
-        return view('appelCandidatures.create');
+    {   
+        $formations = Formation::all();
+        return view('appelCandidatures.create', [
+            'formations' => $formations
+        ]);   
     }
 
 
@@ -38,8 +42,10 @@ class AppelCandidatureController extends Controller
      */
     public function store(Request $request)
     {
+    
         AppelCandidature::create($request->all());
-        return redirect()->route('appelCandidatures.create');
+    
+        return redirect()->route('appels.create');
     }
 
     /**
@@ -81,3 +87,10 @@ class AppelCandidatureController extends Controller
         return redirect()->route('appelCandidatures.index');
     }
 }
+
+
+
+
+
+
+

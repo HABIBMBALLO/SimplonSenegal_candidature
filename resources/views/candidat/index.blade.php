@@ -35,7 +35,7 @@
                                              <td>{{$cand->lieuNaissance}}</td>
                                              <td>{{$cand->niveauEtude}}</td>
                                               <td>
-                                                  <a href="{{route('candidats.modifier',['id'=>$cand->id])}}" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-circle" style="color: #00fff;"></i></a>
+                                                  <a href="{{route('candidats.show',['id'=>$cand->id])}}" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-circle" style="color: #ce0033;"></i></a>
                                                                                                    <!-- Modal -->
                                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                    <div class="modal-dialog">
@@ -79,14 +79,12 @@
                                                       </div>
                                                    </div>
                                                    </div>
-                                                   
-                                                  <a href="{{route('candidats.modifier',['id'=>$cand->id])}}"><i class="bi bi-check2-circle" style="color:#00FF00;"></i></a>
+                                  
+                                                 
                                                   <a href="{{route('candidats.delete',['id'=>$cand->id])}}"> <i class="bi bi-x-circle" style="color:#E40000;"></i></a>
                                                   <a href="{{route('candidats.delete',['id'=>$cand->id])}}"> <i class="bi bi-circle-half" style="color:#000;"></i></a>
                                               </td>
                                           </tr>
-
-
                                           @endforeach
                                        </tbody>
                                           

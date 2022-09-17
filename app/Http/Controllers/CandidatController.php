@@ -94,7 +94,8 @@ class CandidatController extends Controller
     public function show($id)
     {
         $candidat = Candidat::find($id);
-        return view('candidat.show',
+        
+        return view('candidat.index',
          [
         'candidats'=>$candidat
     ]);

@@ -34,8 +34,10 @@ th {
 
 </style>
 <div class="full_container d-flex justify-content-center">
+  
          <div class="">
             <div class="row-sm">
+              
                 <div class="white_shd full margin_bottom_30 ">
                   <div class="table-formations rounded">
                       <div class="header ">Formations</div>

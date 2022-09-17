@@ -42,16 +42,6 @@
                     <input type="text" class="form-control" id="niveauEtude" placeholder="niveauEtude" name="niveauEtude">
                   </div>
                 </div>
-                 <div class="col-md-4">
-                    <label for="typeformation" class="form-label"></label>
-                    <select id="inputState" class="form-select" name="formation_id">
-                        @foreach($formations as $formation)
-                            <option  value="{{$formation->id}}">{{$formation->typeformation}}</option> 
-        
-                        @endforeach
-                    </select>
-                  </div>
-
                 <div class="card-footer">
                   <button type="submit" class="btn btn-danger">Envoyer</button>
                 </div>
