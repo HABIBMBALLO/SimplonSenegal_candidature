@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('appel_candidatures', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->string('description');
+            $table->text('titre');
+            $table->LongText('description');
             $table->date('dateDebut');
             $table->date('dateFin');
             $table->foreignId('formation_id')->nullable();

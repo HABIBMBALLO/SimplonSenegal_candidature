@@ -16,7 +16,8 @@ class CandidatController extends Controller
      */
     public function index()
     {   
-        $candidats = Candidat::all();
+        //pagination
+        $candidats = Candidat::paginate(2);
         return view('candidat.index', compact('candidats'));
         // $candidats = Candidat::paginate(5);
         //  return view('candidat.index', compact('candidats'));
@@ -82,7 +83,8 @@ class CandidatController extends Controller
         ]);
 
 
-        return redirect()->route('candidats.create')->withStatus('Candidat successfully registered.');
+        return redirect()->route('candidats.create')
+            ->withStatus('Candidat successfully registered.');
     }
 
     /**

@@ -35,14 +35,14 @@ th {
 </style>
 <div class="full_container d-flex justify-content-center">
   
-         <div class="">
+         <div class="table w-50 table-bordered">
             <div class="row-sm">
               
                 <div class="white_shd full margin_bottom_30 ">
                   <div class="table-formations rounded">
                       <div class="header ">Formations</div>
                         <table cellspacing="0">
-                          <thead class="rounded">
+                          <thead class="rounded table-striep table-bordered">
                             <tr>
                               <th width="50">titre Formation</th>
                               <th width="310">Description</th>
@@ -61,6 +61,7 @@ th {
                           @endforeach
                         </tbody>
                     </table>
+                      {{ $formations->links() }}
                   </div>
                 </div>
             </div>

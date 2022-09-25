@@ -1,9 +1,8 @@
-
 @extends('layouts.master')
 
 @section('content')
 <div class="full_container d-flex justify-content-center">
-         <div class="">
+         <div class="table w-60 box-shadaw table-rounded">
             <div class="row-sm">
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
@@ -35,9 +34,18 @@
                                              <td>{{$cand->lieuNaissance}}</td>
                                              <td>{{$cand->niveauEtude}}</td>
                                               <td>
-                                                  <a href="{{route('candidats.show',['id'=>$cand->id])}}" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-circle" style="color: #ce0033;"></i></a>
+                                                  <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-circle" style="color: #ce0033;"></i></a>
                                                                                                    <!-- Modal -->
-                                                   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    
+                                              </td>
+                                          </tr>
+                                          @endforeach
+                                       </tbody>
+                                          {{ $candidats->links() }}
+                                    </table>
+                                 </div>
+                                 <!-- partie modal -->
+                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                    <div class="modal-dialog">
                                                       <div class="modal-content">
                                                          <div class="modal-header bg-dark">
@@ -79,18 +87,7 @@
                                                       </div>
                                                    </div>
                                                    </div>
-                                  
-                                                 
-                                                  <a href="{{route('candidats.delete',['id'=>$cand->id])}}"> <i class="bi bi-x-circle" style="color:#E40000;"></i></a>
-                                                  <a href="{{route('candidats.delete',['id'=>$cand->id])}}"> <i class="bi bi-circle-half" style="color:#000;"></i></a>
-                                              </td>
-                                          </tr>
-                                          @endforeach
-                                       </tbody>
-                                          
-                                    </table>
-                                 </div>
-                                 
+                                 <!-- fin partie modal -->
                               </div>
                            </div>
                         </div>

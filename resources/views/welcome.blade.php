@@ -7,6 +7,7 @@
   <title>Simplon</title>
   <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
   <title>Carousel Template for Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/carousel/">
   <!-- Bootstrap core CSS -->
   <link href="{{ asset('plugins/dist/css/bootstrap.min.css')}}" rel="stylesheet">
@@ -40,13 +41,21 @@
                         <a href="https://senegal.simplon.co/about" class="nav-link">Formation</a>
                     </li>
                     </li>    
-
                 </div>
-                <div class="navbar-nav ms-auto">
-                    <a href="" class="nav-item nav-link btn-danger">Login</a>
-                    <a href="{{url ('/Logout')}}" class="nav-item nav-link">Logout</a>
-                </div>
-            </div>
+                  <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
+                    @if (Route::has('login'))
+                    <div class="hidden fixed top-0 right-0 px-1 py-1 sm:block">
+                    @auth
+                        <a href="{{ url('/master') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Connecté</a>
+                    @else
+                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+                        @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                        @endif
+                    @endauth
+                    </div>
+                    @endif       
+                  </div>
         </div>
     </nav>
 
@@ -98,9 +107,9 @@
       <div class="container marketing">
 
         <!-- Three columns of text below the carousel -->
-        <div class="row">
+        <div class="col-md  col-sm-12 row row-cols-1 row-cols-sm-2 row-cols-lg-3c x ">
           @foreach ($appelCandidatures as $appelCandidature)
-          <div class="col-lg-4">
+          <div class="col-lg-4 shadow-sm h-100  sp-rounded-top-15 sp-rounded-bottom-15">
             <img class="rounded-circle" src="/dist/img/undraw_web_developer_re_h7ie.svg" alt="Generic placeholder image" width="140" height="140">
             <h2>{{$appelCandidature->titre}}</h2>
             <p>{{$appelCandidature->description}}<p>
@@ -157,82 +166,125 @@
         <!-- /END THE FEATURETTES -->
 
       </div><!-- /.container -->
-
-        <!-- ======= Footer ======= -->
-  <footer id="footer" class="bg-dark">
-
-<div class="footer-top ">
-  <div class="container">
-    <div class="row">
-
-      <div class="col-lg-3 col-md-6 footer-contact text-white">
-        <h3>Presento<span>.</span></h3>
-        <p>
-          A108 Adam Street <br>
-          New York, NY 535022<br>
-          United States <br><br>
-          <strong>Phone:</strong> +1 5589 55488 55<br>
-          <strong>Email:</strong> info@example.com<br>
-        </p>
+<!-- =============================== Nous contacter =============================== -->
+<section class="container contact">
+  <h2 class="sec-title">Nous Contacter</h2>
+  <div class="row">
+    <form class="col-lg me-lg-5" action="#">
+      <div class="d-lg-flex justify-content-between mb-lg-3">
+        <input class="champ me-lg-5" type="text" name="firstname" id="firstname" placeholder="Prénom *">
+        <input class="champ" type="text" name="lastname" id="lastname" placeholder="Nom *">
       </div>
-
-      <div class="col-lg-2 col-md-6 footer-links text-white">
-        <h4>Useful Links</h4>
-        <ul>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Home</a></li>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">About us</a></li>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Services</a></li>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Terms of service</a></li>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Privacy policy</a></li>
-        </ul>
+      <div class="d-lg-flex justify-content-between mb-lg-3">
+        <input class="champ me-lg-5" type="email" name="email" id="email" placeholder="Email *">
+        <input class="champ" type="tel" name="tel" id="tel" placeholder="Téléphone *">
       </div>
+      <textarea class="champ" placeholder="Message" name="message" id="message">
+      </textarea>
+      <input class="me-2" type="checkbox" name="check" id="check">
+      <label for="check">I agree to <span class="terms">terms et policy</span></label>
+      <input class="btn d-block my-4" type="submit" value="Envoyer">
+      <p class="indications">* These fields are required</p>
+    </form>
 
-      <div class="col-lg-3 col-md-6 footer-links text-white">
-        <h4>Our Services</h4>
-        <ul>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Web Design</a></li>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Web Development</a></li>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Product Management</a></li>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Marketing</a></li>
-          <li><i class="bx bx-chevron-right text-white"></i> <a href="#">Graphic Design</a></li>
-        </ul>
+    <div class="col-lg-4 ms-lg-5 mt-5 coord">
+      <div class="adress d-flex mb-5">
+        <i class="fas fa-map-marker-alt fa-2x mt-1"></i>
+        <div class="ms-lg-5">
+          <h4 class="mb-lg-3">Adresse</h4>
+          <p>Cité keur Goor Gi <br>
+            Dakar, Sicap, Libeté 2 <br>
+            Senegal
+          </p>
+        </div>
       </div>
-
-      <div class="col-lg-4 col-md-6 footer-newsletter text-white ">
-        <h4>Join Our Newsletter</h4>
-        <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-        <form action="" method="post">
-          <input type="email" name="email"><input type="submit" value="Subscribe">
-        </form>
+      <div class="tel d-flex mb-5">
+        <i class="fas fa-phone-alt fa-2x mt-1" aria-hidden="true"></i>
+        <div class="ms-lg-5">
+          <h4 class="mb-lg-3">Téléphone</h4>
+          <p>(221) 77 456 78 90 <br>
+            (221) 77 654 32 10  <br>
+          </p>
+        </div>
       </div>
-
+      <div class="email d-flex mb-5">
+        <i class="fas fa-envelope fa-2x mt-1" aria-hidden="true"></i>
+        <div class="ms-lg-5">
+          <h4 class="mb-3">E-mail</h4>
+          <p>simplon@email.com <br>
+            help@simplon.com
+          </p>
+        </div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+    <!-- Section footer -->
+    <footer class="sp-footer ">
+        <div class="row pt-5 mt-5 text-white d-inline-block row-cols-1 row-cols-sm-2 row-cols-lg-4 d-sm-flex justfy-sm-content-around w-100 gap-0 gap-sm-0 ps-5">
+            <div class="logo-icons col col ps-md-0 px-lg-0  my-2 d-lg-flex text-sm-start">
+                <img src="./formations/img/logoWhiteSimplon.svg"  class="mx-lg-auto mx-auto mx-sm-0" alt="Logo simplon format blanc" width="150">
+                <div class="icons my-5 mx-0 mx-auto mx-sm-0 mx-lg-auto">
+                    <i class="bi bi-facebook  facebook-color"></i>
+                    <i class="bi bi-twitter twitter-color"></i>
+                    <i class="bi bi-youtube youtube-color"></i>
+                    <i class="bi bi-instagram instagram-color"></i>
+                </div>
+            </div>
+            <div class="col px-ms-0 my-2 my-lg-0 text-sm-start">
+                <p>
+                    <a href="" class="d-block sp-link-light fs-4">Voir plus</a>
+                </p>
+                <p>
+                    <a href="" class="d-block sp-link-light my-2">Conditions d'utilisation</a>
+                    <a href="" class="d-block sp-link-light my-2">Notre Histoire</a>
+                    <a href="" class="d-block sp-link-light my-2">Politique de confidentialite</a>
+                    <a href="" class="d-block sp-link-light my-2">FAQ</a>
+                </p>
+            </div>
+            <div class="col px-lg-0 my-2 my-lg-0 text-center text-sm-start">
+                <p class="d-block sp-link-light fs-4">Cordonnees</p>
+                <p class="d-block sp-link-light ">Cite Keur Goor Gui ,<br> Sicap Liberte 6,<br> Dakar Senegal</p>
+                <p>
+                    <a href="" class="d-block sp-link-light my-2">simplon@gmail.com</a>
+                    <a href="" class="d-block sp-link-light my-2">simplon@contactgmail.com</a>
+                </p>
+                <p class="d-block ">(+221) 33 234 43 32 <br> (+221) 88 348 98 43 32</p>
+            </div>
+            <div class="col px-lg-0 my-2 my-lg-0 text-center text-sm-start ">
+                <p class="d-block sp-link-light fs-4">Notre Newsletter</p>
+                <p id="newsletter-text">Souscrivez vous à notre newsletter pour ne pas manquer aucune de nos acticites
+                </p>
+                <p class="sp-input-group">
+                    <input type="email" placeholder="email@gmail.com" id="email">
+                    <input type="button" value="S'abonner" class="sp-btn-danger" id="btn-submit">
+                </p>
+            </div>
+        </div>
+        <div
+            class="copyright text-white p-3 d-flex align-items-center flex-column flex-sm-row justify-content-between">
+            <span>© 2021 Simplon. All rights reserved.</span>
+            <span class=" ">made with <i class="bi bi-suit-heart-fill text-black"></i> <strong> by
+                    SimplonP4</strong></span>
+        </div>
+    </footer>
+    <!-- End Section footer -->
 
-<div class="container d-md-flex py-4 text-white">
+    <!-- ********************************************* -->
+    <!-- Comment Scripts under Usage 1 if you use bootstrap with CDN -->
+    <!-- Comment Scripts under Usage 2 if you use bootstrap on local -->
+    <!-- ********************************************* -->
 
-  <div class="me-md-auto text-center text-md-start">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Presento</span></strong>. All Rights Reserved
-    </div>
-    <div class="credits">
-      <!-- All the links in the footer should remain intact. -->
-      <!-- You can delete the links only if you purchased the pro version. -->
-      <!-- Licensing information: https://bootstrapmade.com/license/ -->
-      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/presento-bootstrap-corporate-template/ -->
-      Designed by <a href="https://senegal.simplon.co/">Simplon Senegal</a>
-    </div>
-  </div>
-  <div class="social-links text-center text-md-end pt-3 pt-md-0">
-    <a href="#" class="twitter"><i class=" bx bxl-twitter-danger"></i></a>
-    <a href="#" class="facebook"><i class=" bx bxl-facebook-danger"></i></a>
-    <a href="#" class="instagram"><i class=" bx bxl-instagram danger"></i></a>
-    <a href="#" class="google-plus"><i class=" bx bxl-skype danger"></i></a>
-    <a href="#" class="linkedin"><i class=" bx bxl-linkedin danger"></i></a>
-  </div>
-</div>
-</footer><!-- End Footer -->
+    <!-- ============Usage 1: Local bootstrap JavaScript ressource file! ============= -->
+    <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="./formations/js/script.js"></script> -->
+    
+    <!-- ============Usage 2: Online bootstrap JavaScript ressource file! ============= -->
+    <!--                jQuery first, then Popper.js, then Bootstrap JS                 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="./formations/js/script.js"></script>
     </main>
 
    <!-- Bootstrap core JavaScript
