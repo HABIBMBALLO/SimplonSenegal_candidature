@@ -1,5 +1,3 @@
-
-
 <div class="login-wrap">
 	<div class="login-html">
 		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
@@ -30,13 +28,9 @@
                     <x-button class="ml-3 button">
                         {{ __('Log in') }}
                     </x-button>
-                </div>
+                	</div>
 
-				<div class="hr"></div>
-				<div class="foot-lnk">
-					<a href="#forgot">Forgot Password?</a>
-				</div>
-			</div>
+		
 			<div class="sign-up-htm">
 				<div class="group">
 					<label for="user" class="label">Username</label>

@@ -42,9 +42,10 @@ class AppelCandidatureController extends Controller
      */
     public function store(Request $request)
     {
-    
-        AppelCandidature::create($request->all());
-    
+        
+       $appelCandidature = AppelCandidature::create($request->all());
+        $appelCandidature->formation_id = (int) $request->input('formation_id');
+        $appelCandidature->save();
         return redirect()->route('appels.create');
     }
 

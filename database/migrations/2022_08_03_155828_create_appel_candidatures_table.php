@@ -19,7 +19,7 @@ return new class extends Migration
             $table->LongText('description');
             $table->date('dateDebut');
             $table->date('dateFin');
-            $table->foreignId('formation_id')->nullable();
+            $table->foreignId('formation_id')->constrained();
             $table->timestamps();
         });
     }

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="full_container d-flex justify-content-center">
-         <div class="table w-60 box-shadaw table-rounded">
+         <div class="table w-50 box-shadaw table-rounded">
             <div class="row-sm">
                            <div class="white_shd full margin_bottom_30">
                               <div class="full graph_head">
@@ -21,6 +21,7 @@
                                              <th>date naissance</th>
                                              <th>niveau Etude</th>
                                              <th>lieu naissance</th>
+                                             <th>formation</th>
                                              <th>Action</th>
                                           </tr>
                                        </thead>
@@ -33,15 +34,13 @@
                                              <td>{{$cand->dateNaissance}}</td>
                                              <td>{{$cand->lieuNaissance}}</td>
                                              <td>{{$cand->niveauEtude}}</td>
+                                             <td>{{$cand->formation_id}}</td>
                                               <td>
                                                   <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-plus-circle" style="color: #ce0033;"></i></a>
-                                                                                                   <!-- Modal -->
-                                    
                                               </td>
                                           </tr>
                                           @endforeach
                                        </tbody>
-                                          {{ $candidats->links() }}
                                     </table>
                                  </div>
                                  <!-- partie modal -->

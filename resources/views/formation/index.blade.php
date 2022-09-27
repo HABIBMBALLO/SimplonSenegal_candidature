@@ -61,7 +61,7 @@ th {
                           @endforeach
                         </tbody>
                     </table>
-                      {{ $formations->links() }}
+        
                   </div>
                 </div>
             </div>

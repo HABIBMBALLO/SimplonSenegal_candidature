@@ -27,8 +27,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('welcome');
+    return view('layouts.master');
 })->middleware(['auth'])->name('dashboard');
+
 
 Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');

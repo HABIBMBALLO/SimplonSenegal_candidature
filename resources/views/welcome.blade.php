@@ -220,10 +220,10 @@
   </div>
 </section>
     <!-- Section footer -->
-    <footer class="sp-footer ">
+    <footer class="sp-footer bg-dark">
         <div class="row pt-5 mt-5 text-white d-inline-block row-cols-1 row-cols-sm-2 row-cols-lg-4 d-sm-flex justfy-sm-content-around w-100 gap-0 gap-sm-0 ps-5">
             <div class="logo-icons col col ps-md-0 px-lg-0  my-2 d-lg-flex text-sm-start">
-                <img src="./formations/img/logoWhiteSimplon.svg"  class="mx-lg-auto mx-auto mx-sm-0" alt="Logo simplon format blanc" width="150">
+                <img src="dist/img/logo simplon.png"  class="mx-lg-auto mx-auto mx-sm-0 h-14" alt="Logo simplon format blanc" width="100" height="60">
                 <div class="icons my-5 mx-0 mx-auto mx-sm-0 mx-lg-auto">
                     <i class="bi bi-facebook  facebook-color"></i>
                     <i class="bi bi-twitter twitter-color"></i>
